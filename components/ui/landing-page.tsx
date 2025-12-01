@@ -74,6 +74,16 @@ export function Vaulten() {
     setIsMounted(true)
   }, [])
 
+  const handleDownloadCapabilityDeck = () => {
+    // Create a link to the capability deck document
+    const link = document.createElement('a')
+    link.href = '/documents/capbility-deck.docx' // Path to your DOCX file in public folder
+    link.download = 'Vaulten-Capability-Deck.docx'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY)
@@ -141,7 +151,7 @@ export function Vaulten() {
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
             </Button>
-            <Button variant="outline" size="sm" className="rounded-3xl">
+            <Button variant="outline" size="sm" className="rounded-3xl" onClick={handleDownloadCapabilityDeck}>
               Download Capability Deck
             </Button>
             <Button size="sm" className="rounded-3xl">
@@ -208,7 +218,7 @@ export function Vaulten() {
               </motion.div>
             ))}
             <motion.div variants={itemFadeIn} className="flex flex-col gap-3 pt-4">
-              <Button variant="outline" className="w-full rounded-3xl">
+              <Button variant="outline" className="w-full rounded-3xl" onClick={handleDownloadCapabilityDeck}>
                 Download Capability Deck
               </Button>
               <Button className="w-full rounded-3xl">Book a Strategy Call</Button>
@@ -275,7 +285,7 @@ export function Vaulten() {
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </motion.span>
                   </Button>
-                  <Button variant="outline" size="lg" className="rounded-3xl">
+                  <Button variant="outline" size="lg" className="rounded-3xl" onClick={handleDownloadCapabilityDeck}>
                     Download Capability Deck
                   </Button>
                 </motion.div>
@@ -833,27 +843,15 @@ export function Vaulten() {
               {[
                 {
                   quote:
-                    "Vaulten transformed our approach to data privacy. Their practical implementation of DPDP compliance gave us confidence and clarity.",
-                  author: "Priya Sharma",
-                  company: "CTO, TechVentures",
+                    "Dr. Fayaz has made a substantial contribution to strengthening IFIM's institutional governance and compliance systems. His leadership in streamlining ISO 21001 processes, enhancing NAAC/NIRF documentation, and refining EC/QC workflows has brought exceptional clarity and structure. He proactively identified operational risks, developed comprehensive risk registers, and introduced robust process compliance mechanisms. His ability to convert complex requirements into practical, repeatable systems has added significant institutional value.",
+                  author: "Rohit Prasad",
+                  company: "VP- IT Systems, IFIM",
                 },
                 {
                   quote:
-                    "The ISO 21001 framework implementation improved not just our accreditation readiness, but our entire institutional culture.",
-                  author: "Dr. Rajesh Kumar",
-                  company: "Vice Chancellor, National University",
-                },
-                {
-                  quote:
-                    "Their cybersecurity advisory helped us identify and address critical vulnerabilities we didn't even know existed.",
-                  author: "Anita Desai",
-                  company: "CISO, Healthcare Systems Ltd",
-                },
-                {
-                  quote:
-                    "Professional, knowledgeable, and results-oriented. Vaulten delivered a governance system that actually works for our organization.",
-                  author: "Vikram Patel",
-                  company: "Compliance Head, FinServe Inc",
+                    "Dr. Fayaz has made a meaningful impact on enhancing KanTime's security and compliance framework. His strong command of HITRUST, SOC 2 and GDPR requirements enabled us to strengthen controls, documentation and audit preparedness. He demonstrated exceptional clarity in identifying risks and providing structured, actionable guidance. His contributions to refining our security processes and evidence management were highly valuable.",
+                  author: "Prem Kumar",
+                  company: "Director- IT & Strategic Initiatives, KanTime",
                 },
               ].map((testimonial, index) => (
                 <motion.div

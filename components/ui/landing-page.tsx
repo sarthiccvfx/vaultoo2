@@ -887,6 +887,12 @@ export function Vaulten() {
                   author: "Prem Kumar",
                   company: "Director- IT & Strategic Initiatives, KanTime",
                 },
+                {
+                  quote:
+                    "Dr. Fayas's instrumental involvement was a key to the effective transition of our organization from ISO 27001:2013 to ISO 27001:2022 standards. Valuable guidance on emerging controls in areas like Cloud security, Cyber-security, and Privacy showcased his forward-thinking approach and dedication to excellence. He also led the revamp of our ISMS manual, creating a framework perfectly aligned with the updated new standards. Beyond the technical aspects, Dr. Fayas delivered exceptional training sessions that engaged senior management and project teams. These sessions didn't just build awareness but instilled a sense of accountability and commitment to information security. His contributions have not only strengthened our organization's adherence to ISO 2022 standards but have also embedded a culture of responsibility and continuous improvement in our information security practices.",
+                  author: "Suresh Subramaniam",
+                  company: "Client",
+                },
               ].map((testimonial, index) => (
                 <motion.div
                   key={index}
@@ -952,7 +958,7 @@ export function Vaulten() {
                   </div>
                   <div>
                     <h3 className="font-medium">Email Us</h3>
-                    <p className="text-sm text-muted-foreground">contact@vaulten.in</p>
+                    <p className="text-sm text-muted-foreground">syedfayaz@vaulten.co.in</p>
                   </div>
                 </motion.div>
                 <motion.div whileHover={{ x: 5 }} className="flex items-start gap-3">
@@ -967,11 +973,13 @@ export function Vaulten() {
               </div>
               <div className="mt-8 flex space-x-3">
                 {[
-                  { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn" },
+                  { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn", url: "https://www.linkedin.com/in/sfayazs?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
                 ].map((social, index) => (
                   <motion.div key={index} whileHover={{ y: -5, scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                     <Link
-                      href="#"
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="rounded-3xl border p-2 text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
                     >
                       {social.icon}
@@ -1178,19 +1186,26 @@ export function Vaulten() {
             className="bg-background rounded-3xl max-w-3xl max-h-[90vh] overflow-y-auto w-full"
           >
             <div className="p-6 md:p-10">
-              <div className="flex items-start justify-between gap-4 mb-6">
-                <div>
+              <div className="flex flex-col md:flex-row items-start gap-6 mb-6">
+                <div className="flex-1">
                   <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
                     Meet the Founder
                   </h2>
                   <p className="text-muted-foreground mt-1">Dr. S Fayaz</p>
                 </div>
-                <button
-                  onClick={() => setShowFounderModal(false)}
-                  className="flex-shrink-0 p-2 hover:bg-muted rounded-full transition-colors"
-                >
-                  <X className="h-6 w-6" />
-                </button>
+                <div className="flex-shrink-0 flex items-start gap-4">
+                  <img
+                    src="/images/image.png"
+                    alt="Dr. S Fayaz"
+                    className="h-32 w-32 md:h-40 md:w-40 rounded-3xl object-cover"
+                  />
+                  <button
+                    onClick={() => setShowFounderModal(false)}
+                    className="flex-shrink-0 p-2 hover:bg-muted rounded-full transition-colors"
+                  >
+                    <X className="h-6 w-6" />
+                  </button>
+                </div>
               </div>
               
               <div className="space-y-6">
